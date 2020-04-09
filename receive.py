@@ -52,13 +52,7 @@ while True:
         nextTime = datetime.datetime.now() + datetime.timedelta(seconds=timeout)
         prevMousePos = mousePos
 
-    # if prevMousePos != mousePos:
-    #     print('X:', mousePos[0], 'Y:', mousePos[1])
-    #     nextTime = datetime.datetime.now() + datetime.timedelta(seconds=timeout)
-
-    # prevMousePos = mousePos
-
-    # pyautogui.moveTo(mousePos[0], mousePos[1])
+    pyautogui.moveTo(mousePos[0], mousePos[1])
 
     if mousePos[0] < 10 and mousePos[1] < 10:
         break
