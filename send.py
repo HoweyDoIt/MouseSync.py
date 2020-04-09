@@ -2,6 +2,8 @@ import socket
 import pyautogui
 
 size = pyautogui.size()
+# prevMousePos = pyautogui.position()[0] / size[0], pyautogui.position()[1] / size[1]
+# mousePos = pyautogui.position()[0] / size[0], pyautogui.position()[1] / size[1]
 
 UDP_IP  = '255.255.255.255'
 
@@ -23,7 +25,9 @@ while True:
     mouseStr = 'pos' + ' ' + str(mousePos[0]) + ' ' + str(mousePos[1])
     data = mouseStr.encode('utf-8')
 
+    # if mousePos != prevMousePos:
     sock.sendto(data, (UDP_IP, UDP_PORT))
+        # prevMousePos = mousePos
     # print (mouseStr.split(" ")[1]
 
     # # Exit condition
