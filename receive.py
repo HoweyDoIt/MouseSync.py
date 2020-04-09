@@ -2,6 +2,8 @@ import socket
 import datetime
 import pyautogui
 
+# pyautogui.FAILSAFE = False
+
 size = pyautogui.size()
 mousePos = pyautogui.position()
 prevMousePos = pyautogui.position()
@@ -54,7 +56,7 @@ while True:
         nextTime = datetime.datetime.now() + datetime.timedelta(seconds=timeout)
         prevMousePos = mousePos
 
-    # pyautogui.moveTo(mousePos[0], mousePos[1])
+    pyautogui.moveTo(mousePos[0], mousePos[1])
 
     if mousePos[0] < 10 and mousePos[1] < 10:
         break
